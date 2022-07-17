@@ -10,22 +10,21 @@
 # - [2, 3, 5, 9, 3] -> на нечётных позициях элементы 3 и 9, ответ: 12
 
 import random
-# n = int(input('Введите длину списка: '))
+n = int(input('Введите длину списка: '))
 
 
-# def Rnd_lst():
-#     lst = []
-#     for i in range(n):
-#         lst.append(random.randint(1, 10))
-#     print(f'Cписок:{lst}')
-#     sum = 0
-#     for i in range(n):
-#         if i % 2 > 0:
-#             sum = sum + lst[i]
-#     print(f'Сумма чисел, стоящих на нечётных позициях = {sum}')
+def Rnd_lst():
+    lst = []
+    for i in range(n):
+        lst.append(random.randint(1, 10))
+    print(f'Cписок:{lst}')
+    sum = 0
+    for i in range(n):
+        if i % 2 > 0:
+            sum = sum + lst[i]
+    print(f'Сумма чисел, стоящих на нечётных позициях = {sum}')
 
-
-# Rnd_lst()
+Rnd_lst()
 
 # 2 - Напишите программу, которая найдёт произведение пар чисел списка.
 # Парой считаем первый и последний элемент, второй и предпоследний и т.д.
@@ -35,21 +34,20 @@ import random
 # - [2, 3, 4, 5, 6] => [12, 15, 16];
 # - [2, 3, 5, 6] => [12, 15]
 
-# n = int(input('Введите длину списка: '))
+n = int(input('Введите длину списка: '))
 
-# num = [random.randint(-10, 10)
+num = [random.randint(-10, 10)
 
-#        for i in range(0, n)]
-# print(f'Начальный список: {num}')
+       for i in range(0, n)]
+print(f'Начальный список: {num}')
 
+def Mult_num():  # Умножаем первый с последним и т.д.
+    last = len(num) - 1
+    result = [num[i] * num[last - i]
+              for i in range(0, (last + 1) // 2)]
+    print(f'Список произведений {result}')
 
-# def Mult_num():  # Умножаем первый с последним и т.д.
-#     last = len(num) - 1
-#     result = [num[i] * num[last - i]
-#               for i in range(0, (last + 1) // 2)]
-#     print(f'Список произведений {result}')
-
-# Mult_num()
+Mult_num()
 
 
 # 3 - Задайте список из вещественных чисел. Напишите программу,
@@ -69,10 +67,11 @@ def DiffMaxMin(list):
     diff = round(max(listBuf), 2) - round(min(listBuf), 2)
     return diff
 
+
 n = int(input('Введите длину списка: '))
 
 listUser = [random.uniform(1, 10)
-        for i in range(0, n)]
+            for i in range(0, n)]
 print(f'Начальный список: {listUser}')
 # listUser = [1.1, 1.2, 3.1, 5, 10.01]
 dif = DiffMaxMin(listUser)
@@ -86,6 +85,15 @@ print(f"Разница между максимальным и минимальн
 # - 45 -> 101101
 # - 3 -> 11
 # - 2 -> 10
+
+n = int(input('Введите натуральное число: '))
+temp = n
+number = ''
+while n > 0:
+    number = str(n % 2) + number
+    n //= 2
+print(f'Двоичный эквивалент числа ', temp, 'число: ', number)
+
 # 5 - Задайте число. Составьте список чисел Фибоначчи, в том числе для отрицательных индексов.
 
 # *Пример:*
