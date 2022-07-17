@@ -35,21 +35,21 @@ import random
 # - [2, 3, 4, 5, 6] => [12, 15, 16];
 # - [2, 3, 5, 6] => [12, 15]
 
-n = int(input('Введите длину списка: '))
+# n = int(input('Введите длину списка: '))
 
-num = [random.randint(-10, 10)
+# num = [random.randint(-10, 10)
 
-       for i in range(0, n)]
-print(f'Начальный список: {num}')
+#        for i in range(0, n)]
+# print(f'Начальный список: {num}')
 
 
-def Mult_num():  # Умножаем первый с последним и т.д.
-    last = len(num) - 1
-    result = [num[i] * num[last - i]
-              for i in range(0, (last + 1) // 2)]
-    print(f'Список произведений {result}')
+# def Mult_num():  # Умножаем первый с последним и т.д.
+#     last = len(num) - 1
+#     result = [num[i] * num[last - i]
+#               for i in range(0, (last + 1) // 2)]
+#     print(f'Список произведений {result}')
 
-Mult_num()
+# Mult_num()
 
 
 # 3 - Задайте список из вещественных чисел. Напишите программу,
@@ -60,6 +60,24 @@ Mult_num()
 
 # - [1.1, 1.2, 3.1, 5.567, 10.03] => 0.564 или 564
 
+def DiffMaxMin(list):
+    diff = 0
+    listBuf = []
+    for i in range(list.__len__()):
+        if(type(list[i]) == float):
+            listBuf.append(list[i] % 1)
+    diff = round(max(listBuf), 2) - round(min(listBuf), 2)
+    return diff
+
+n = int(input('Введите длину списка: '))
+
+listUser = [random.uniform(1, 10)
+        for i in range(0, n)]
+print(f'Начальный список: {listUser}')
+# listUser = [1.1, 1.2, 3.1, 5, 10.01]
+dif = DiffMaxMin(listUser)
+
+print(f"Разница между максимальным и минимальным значением дробной части элементов равна: {dif}")
 
 # 4 - Напишите программу, которая будет преобразовывать десятичное число в двоичное.
 
