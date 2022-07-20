@@ -73,7 +73,7 @@ n = int(input('Введите длину списка: '))
 listUser = [random.uniform(1, 10)
             for i in range(0, n)]
 print(f'Начальный список: {listUser}')
-# listUser = [1.1, 1.2, 3.1, 5, 10.01]
+# listUser = [1.1, 1.2, 3.1, 5.567, 10.03]
 dif = DiffMaxMin(listUser)
 
 print(f"Разница между максимальным и минимальным значением дробной части элементов равна: {dif}")
