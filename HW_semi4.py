@@ -8,20 +8,59 @@
 
 from math import *
 
-n = round(pi, 3)
-print('число Пи из функции Pi:', n)
+# n = round(pi, 3)
+# print('число Пи из функции Pi:', n)
 
-n = 100
-calc_pi = sum(1/16**x*(4/(8*x + 1) - 2/(8*x + 4) - 1/(8*x + 5) - 1/(8*x + 6)) 
-for x in range(n))
+# n = 100
+# calc_pi = sum(1/16**x*(4/(8*x + 1) - 2/(8*x + 4) - 1/(8*x + 5) - 1/(8*x + 6)) 
+# for x in range(n))
 
-print('вычесленное число Пи:', round(calc_pi,3))
-
-
-
-# 2- Задайте последовательность чисел. Напишите программу, которая выведет список неповторяющихся элементов исходной последовательности. Посмотрели, что такое множество? Вот здесь его не используйте.
+# print('вычесленное число Пи:', round(calc_pi,3))
 
 
+
+# 2- Задайте последовательность чисел. Напишите программу, 
+# которая выведет список неповторяющихся элементов исходной 
+# последовательности. Посмотрели, что такое множество? Вот здесь его не используйте.
+from enum import unique
+from tokenize import Number
+# Number=[1,5,5,5,6,6,7,7,8,9,10]
+# unique_numbers = list(set(Number))
+# print(unique_numbers, end = '')
+
+# Задайте последовательность чисел. Напишите программу, которая выведет список неповторяющихся элементов исходной последовательности.
+
+# subs = [1, 3, 5, 4, 9, 14, 5, 1]
+# alone = []
+# for i in range (0, len(subs)):
+#     duplicate = 0
+#     for j in range(0, len(subs)):
+#         if i != j:
+#             if subs[i] == subs[j]:
+#                 duplicate = 1
+#     if duplicate == 0:
+#         alone.append(subs[i])
+# print(alone)
+
+
+import os
+import random 
+os.system('cls')
+
+list = [random.randint (1, 100 ) for i in range (1, 30)]
+print('Исходная случайная последовательность: ')
+print(list)
+listing1 = []
+listing2 = []
+for i in list:
+    if list.count(i) == 1:
+        listing1.append(i)
+    else:
+        listing2.append(i)
+print('\nСписок неповторяющихся элементов: ')
+print(listing1)
+print('\nСписок повторяющихся элементов: ')
+print(listing2)
 # 3- Задайте натуральное число N. Напишите программу, которая составит список простых множителей числа N.
 # Пример: при N = 12 -> [2, 3]
 
