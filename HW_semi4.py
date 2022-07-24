@@ -84,15 +84,15 @@
 # https://zen.yandex.ru/suite/a6424a0f-4fdb-44a1-95a0-9945e6f0a699
 # Это на случай возникновения непонятных символов в файле.
 
-# def check(f):
-#     for i in f:
-#         if i.isdigit():
-#             return False
-#     return True
+def checkdig(f):
+    for i in f:
+        if i.isdigit():
+            return False
+    return True
 
-# with open("file_HW_semi4.txt", "r") as file_HW_semi4:
-#     a = file_HW_semi4.read().split()
-# with open("file_HW_semi4.txt", "w") as file_HW_semi4:
-#     for i in a:
-#         if check(i):
-#             file_HW_semi4.write(i+" ")
+with open("file_HW_semi4.txt", "r") as file_HW_semi4:
+    a = file_HW_semi4.read().split()
+with open("file_HW_semi4.txt", "w") as file_HW_semi4:
+    for i in a:
+        if checkdig(i):
+            file_HW_semi4.write(i+" ")
