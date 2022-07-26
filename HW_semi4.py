@@ -7,15 +7,15 @@
 # - при d = 0.001, π = 3.141.    10^(-10)≤ d ≤10^-1
 
 # from math import *
-
-# n = round(pi, 3)
+# d = 0.001
+# n = (pi)
 # print('число Пи из функции Pi:', n)
 
 # n = 100
-# calc_pi = sum(1/16**x*(4/(8*x + 1) - 2/(8*x + 4) - 1/(8*x + 5) - 1/(8*x + 6)) 
+# calc_pi = sum(1/16**x*(4/(8*x + 1) - 2/(8*x + 4) - 1/(8*x + 5) - 1/(8*x + 6))
 # for x in range(n))
-
-# print('вычесленное число Пи:', round(calc_pi,3))
+# calc_pi= int(calc_pi/d)*d
+# print('вычесленное число Пи:', calc_pi)
 
 
 
@@ -84,15 +84,15 @@
 # https://zen.yandex.ru/suite/a6424a0f-4fdb-44a1-95a0-9945e6f0a699
 # Это на случай возникновения непонятных символов в файле.
 
-def checkdig(f):
-    for i in f:
-        if i.isdigit():
-            return False
-    return True
+# def checkdig(f):
+#     for i in f:
+#         if i.isdigit():
+#             return False
+#     return True
 
-with open("file_HW_semi4.txt", "r") as file_HW_semi4:
-    a = file_HW_semi4.read().split()
-with open("file_HW_semi4.txt", "w") as file_HW_semi4:
-    for i in a:
-        if checkdig(i):
-            file_HW_semi4.write(i+" ")
+# with open("file_HW_semi4.txt", "r") as file_HW_semi4:
+#     a = file_HW_semi4.read().split()
+# with open("file_HW_semi4.txt", "w") as file_HW_semi4:
+#     for i in a:
+#         if checkdig(i):
+#             file_HW_semi4.write(i+" ")
